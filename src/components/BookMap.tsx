@@ -43,7 +43,7 @@ export default function BookMap() {
         <MapContainer
             center={[20,0]}
             zoom={2}
-            style={{height:"600px"}}
+            style={{height:"300px", width:"600px", padding:"20px"}}
         >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 

@@ -125,3 +125,5 @@ export const books = [
   country: "France"
 }
 ]
+
+export const books_list = []

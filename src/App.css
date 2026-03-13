@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+.interface{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.data{
+  padding: 20px;
+}
