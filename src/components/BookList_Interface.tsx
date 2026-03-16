@@ -1,17 +1,23 @@
-import { useState } from "react"
+// import { useState } from "react"
 // import { books_list } from "../books"
+import type { Book } from "../App"
 
-export default function BookList_Interface(){
-    // const [books_list,setBooksList] = useState<string[]>([])
-    const [books_list,setBooksList] = useState([])
+type Props = {
+  books_list: Book[]
+  setBooksList: React.Dispatch<React.SetStateAction<Book[]>>
+}
+export default function BookList_Interface({books_list, setBooksList}:Props){
+
     
     function add_book(e){
         e.preventDefault()
         console.log(e)
+        const year = 1990
         const formData = new FormData(e.currentTarget)
-        const book_name = formData.get("book_name")
-        const author_name = formData.get("author_name")
-        const book = {book_name, author_name}
+        const book_name = formData.get("book_name") as string
+        const author_name = formData.get("author_name") as string
+        const country = formData.get("country_name") as string
+        const book : Book = {book_name, author_name, year, country}
         console.log(book_name)
         setBooksList(prev => [...prev, book])
     }
