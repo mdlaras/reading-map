@@ -1,16 +1,19 @@
 import { useState } from "react"
-import { books_list } from "../books"
+// import { books_list } from "../books"
 
 export default function BookList_Interface(){
-    const [books_list,setBooksList] = useState<string[]>([])
+    // const [books_list,setBooksList] = useState<string[]>([])
+    const [books_list,setBooksList] = useState([])
     
     function add_book(e){
         e.preventDefault()
         console.log(e)
         const formData = new FormData(e.currentTarget)
         const book_name = formData.get("book_name")
+        const author_name = formData.get("author_name")
+        const book = {book_name, author_name}
         console.log(book_name)
-        setBooksList([...books_list, book_name])
+        setBooksList(prev => [...prev, book])
     }
     
     return(
@@ -20,11 +23,19 @@ export default function BookList_Interface(){
                     Book Name
                     <input name="book_name" type="text" />
                 </label>
+                <label>
+                    Author Name
+                    <input name="author_name" type="text" />
+                </label>
+                <label>
+                    Country
+                    <input name="country_name" type="text" />
+                </label>
                 <button type="submit">Add</button>
             </form> 
             <div>
                 {books_list.map((book,i) => (
-                    <p>{i+1}. {book}</p>
+                    <p>{i+1}. {book.author_name} - {book.book_name}</p>
                 ))}
             </div>
         </div>
