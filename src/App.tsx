@@ -20,7 +20,7 @@ function App() {
         <h1>Reading Map</h1>
       </div>
       <p className="read-the-docs">
-        How international is your library really? Insert the last books you read or your references here, and let us see if you have explored the world yet. 
+        Map out the books that you have read!
       </p>
       <div className='interface'>
         <div className='data output'>
