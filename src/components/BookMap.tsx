@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, CircleMarker, Tooltip } from "react-leaflet";
-// import {books} from "../books"
-import { countryCoords } from "../countrycodes";
-import type { Book } from "../App"
+// import {books} from "../data/books"
+import { countryCoords } from "../data/countrycodes";
+import type { Book } from "../types"
 
 
 type Props = {

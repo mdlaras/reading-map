@@ -1,19 +1,11 @@
-import { useState } from 'react'
-
 import './App.css'
-import BookList_Interface from './components/BookList_Interface'
+import BookList from './components/BookList'
 import BookMap from './components/BookMap'
-
-export type Book = {
-  book_name: string
-  author_name: string
-  year: number
-  country: string
-}
-
+import { useBooks } from './hooks/useBooks'
 
 function App() {
-  const [books_list,setBooksList] = useState<Book[]>([])
+  const { booksList, addBook } = useBooks();
+
   return (
     <>
       <div>
@@ -24,12 +16,12 @@ function App() {
       </p>
       <div className='interface'>
         <div className='data output'>
-          <BookMap books_list = {books_list}/>
+          <BookMap books_list={booksList} />
         </div>
         <div className='data input'>
-          <BookList_Interface 
-            books_list = {books_list}
-            setBooksList = {setBooksList}
+          <BookList
+            booksList={booksList}
+            addBook={addBook}
           />
         </div>
       </div>
