@@ -9,12 +9,12 @@ export const useBooks = (initialBooks: Book[] = []) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
-        const book_name = formData.get("book_name") as string;
+        const title = formData.get("title") as string;
         const author_name = formData.get("author_name") as string;
         const country = formData.get("country_name") as string;
-        const year = Number(formData.get("year"));
+        const first_publish_year = Number(formData.get("first_publish_year"));
 
-        const newBook: Book = { book_name, author_name, year, country };
+        const newBook: Book = { title, author_name, first_publish_year, country };
 
         setBooksList((prev) => [...prev, newBook]);
 

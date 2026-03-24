@@ -1,6 +1,6 @@
 export type Book = {
-  book_name: string;
+  title: string;
   author_name: string;
-  year: number;
+  first_publish_year: number;
   country: string;
 };
